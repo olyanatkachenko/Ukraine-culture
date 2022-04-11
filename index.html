@@ -12,8 +12,10 @@
 
 </head>
 <body>
+
 <div class="container">
 
+    <!--Navigation-->
     <header>
         <div class="nav-bar">
             <div class="nav-bar-left">
@@ -21,7 +23,16 @@
             </div>
 
             <div class="nav-bar-right">
-                <button class="menu"> Menu<img src="img/Menu-ukraine.svg"/></button>
+
+                <button onclick="openNav()" class="menu"> Menu<img src="img/Menu-ukraine.svg"/></button>
+            </div>
+        </div>
+        <div id="mobile_menu" class="overlay">
+            <a class="close" onclick="closeNav()">&times;</a>
+            <div class="overlay_content">
+                <a href="#">About</a>
+                <a href="#">About</a>
+                <a href="#">About</a>
             </div>
         </div>
         <hr>
@@ -178,57 +189,35 @@
             <span></span>
         </div>
         <h2 class="blog-name">Last articles about Ukraine</h2>
-        <div class="blog-container">
-            <!--box-1-->
-            <div class="blog-box">
-                <div class="blog-img">
-                    <img src="img/ex-kyiv.png" alt="">
-                </div>
-                <div class="blog-text">
-                    <span>18 April 2022 • 2 min read</span>
-                    <a href="#" class="blog-title">Sodales non tincidunt condimentum ullamcorper.</a>
-                    <p>Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Sodales non tincidunt condimentum
-                        ullamcorper.</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-
-            <!--box-2-->
-            <div class="blog-box">
-                <div class="blog-img">
-                    <img src="img/ex-kyiv.png" alt="">
-                </div>
-                <div class="blog-text">
-                    <span>18 April 2022 • 2 min read</span>
-                    <a href="#" class="blog-title">Sodales non tincidunt condimentum ullamcorper.</a>
-                    <p>Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Sodales non tincidunt condimentum
-                        ullamcorper.</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-
-            <!--box-1-->
-            <div class="blog-box">
-                <div class="blog-img">
-                    <img src="img/ex-kyiv.png" alt="">
-                </div>
-                <div class="blog-text">
-                    <span>18 April 2022 • 2 min read</span>
-                    <a href="#" class="blog-title">Sodales non tincidunt condimentum ullamcorper.</a>
-                    <p>Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Sodales non tincidunt condimentum
-                        ullamcorper.</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-
-
-        </div>
+        <div class="blog-container" id="blog-container"></div>
 
     </div>
 
+    <div class="about-myproject">
+        <h2 class="about-project">I creat, <b>develop</b> and have fun for <b>mood</b></h2>
+        <p class="about-proj">We're passionate about the projects we do, just the same as our clients. It creates a
+            unique relationship between us and our clients and helps us go above and beyond. It creates a unique
+            relationship between us and our clients and helps us go above and beyond.</p>
+    </div>
+
+    <footer>
+        <hr class="hr-footer">
+        <div class="footer-p">
+            <p class="p-footer">Created by Olyana Tkachenko 2022</p>
+            <div class="footer-right">
+                <p class="p-footer">My Instagram </p>
+                <img src="img/instagram-ukraine.svg" class="img-footer">
+            </div>
+        </div>
+    </footer>
+
+
 </div>
+
+<script type="text/javascript" src="https://unpkg.com/@tryghost/content-api@1.7.2/umd/content-api.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/@tryghost/helpers@1.1.62/umd/helpers.min.js"></script>
+<script type="text/javascript" src="blog.js"></script>
+
+<script type="text/javascript" src="mobile.js"></script>
 </body>
 </html>
