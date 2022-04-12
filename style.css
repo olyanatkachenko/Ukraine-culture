@@ -1,57 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;800;900&family=Work+Sans:wght@100;200;400;500;600;700;800;900&display=swap');
+
 
 :root {
     --main-color: #121312;
-    --font-family: "Poppins";
+    --font-family: "Work Sans";
 
 }
 
 body {
-    font-family: "Poppins";
+    font-family: "Work Sans";
 }
 
 .container {
-    margin: 0 10%;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
 /*header*/
-.nav-bar {
+.mobile-menu-button {
+    background: none;
+    border: none;
+}
+
+.blog-logo a span {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
+    border-bottom: 3px solid #eff0f1;
+    align-items: center;
+    height: 135px;
+    box-sizing: border-box;
+    padding: 0 15px;
 }
 
-.nav-bar-left {
-    font-weight: 400;
-    font-size: 24px;
-    text-decoration: none;
+.content-container {
+    padding: 0 15px;
 }
 
-a, a:visited {
-    color: var(--main-color);
-    text-decoration: none;
-
-}
-
-.menu {
-    text-decoration: none;
-    border: none;
-    background: none;
-    text-align: center;
+.navigation {
     display: flex;
-    font-size: 24px;
+    align-items: center;
 }
 
-.menu img {
-    margin-left: 20px;
-    margin-top: 4px;
+.nav ul {
+    display: flex;
 }
 
-hr {
-    border: 4px solid black;
-    opacity: 100%;
+.nav {
+    display: none;
+    height: 42px;
 }
+
+a {
+    text-decoration: none;
+    color: #3f3f3f;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    margin: 10px 20px;
+    color: #3f3f3f;
+    font-weight: normal;
+    font-size: 0.875rem;
+}
+
+header nav ul li {
+
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+header .search-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    width: 21px;
+    height: 22px;
+    border-radius: 5px;
+}
+
+header .search-trigger svg {
+    width: 16px;
+    height: 16px;
+}
+
+header .search-trigger svg path {
+    color: #3f3f3f;
+    fill: #3f3f3f;
+}
+
+header .search-trigger:hover svg path,
+header .bookmark-trigger:hover i {
+    color: #0069FF;
+    fill: #0069FF;
+}
+
+header ul a:hover {
+    color: #0069FF;
+    border-bottom: 1px solid #0069FF;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.btn:before {
+    content: '';
+    background: #eff0f1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+header ul a {
+    border-bottom: 1px solid transparent;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+header .bookmark-trigger {
+    padding: 10px 10px;
+    width: 21px;
+    height: 22px;
+    border-radius: 5px;
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .navigation {
+    margin-right: 10px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn.btn-small {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+.btn {
+    font-weight: normal;
+    outline: 0;
+    border-radius: 5px;
+    border: 3px solid #eff0f1;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    overflow: hidden;
+    background: #fff;
+    display: inline-block;
+    color: #212529;
+}
+
+.btn :hover {
+    color: #0069FF;
+}
+
 
 .full-screen-container {
     height: calc(100vh - 140px);
@@ -62,14 +193,14 @@ hr {
 }
 
 .full-screen-container h1 {
-    font-size: 140px;
+    font-size: 160px;
     text-transform: uppercase;
     font-weight: 900;
     margin-bottom: 20px;
 }
 
 .full-screen-container h4 {
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 400;
     opacity: 60%;
     margin-bottom: 80px;
@@ -329,11 +460,8 @@ article {
 /*footer*/
 footer {
     margin-top: 290px;
-}
-
-.hr-footer {
-    border: 1px solid black;
-    margin: 0;
+    padding: 0 15px;
+    border-top: 3px solid #eff0f1;
 }
 
 .footer-p {
@@ -353,7 +481,7 @@ footer {
 }
 
 
-@media (max-width: 1250px) {
+/*@media (max-width: 1250px) {
     .blog-box {
         width: 300px;
     }
@@ -370,7 +498,7 @@ footer {
         margin: 20px 10px;
         width: 100%;
     }
-}
+}*/
 
 /*mobile Nav*/
 @media only screen and(max-width: 800px) {
@@ -432,3 +560,108 @@ footer {
         right: 15px;
     }
 }
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+    }
+
+    .navigation {
+        border-right: 1px solid #eff0f1;
+        margin-right: 10px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+/*Screen Size 500px and Up*/
+
+@media (max-width: 992px ) {
+    .full-screen-container h1 {
+        font-size: 80px;
+    }
+
+    .full-screen-container h4 {
+        font-size: 24px;
+    }
+
+    .article-2 {
+        flex-direction:column ;;
+    }
+
+    .article-name {
+        font-size: 40px;
+    }
+
+    .article-info {
+        font-size: 14px;
+    }
+
+    .event-1 {
+        font-size: 40px;
+    }
+
+    .event-info {
+        font-size: 14px;
+    }
+
+    .about-event {
+        font-size: 14px;
+    }
+.carousel-gallery-wrap{
+    flex-direction:column ;
+}
+    .blog-name {
+        font-size: 40px;
+    }
+
+    .blog-container {
+
+    }
+
+    .about-project {
+        font-size: 40px;
+    }
+
+    .about-proj {
+        font-size: 14px;
+        margin-left: 40px;
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+
+    .footer-p {
+        font-size: 14px;
+        height: 80px
+    }
+}
+

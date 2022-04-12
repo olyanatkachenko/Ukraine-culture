@@ -1,7 +1,6 @@
 const {tags, readingTime} = GhostHelpers;
 
 
-
 const ghostapi = new GhostContentAPI({
     url: 'http://localhost:2368',
     key: '00cef0bf2fa8d415ce1b5a7b9a',
@@ -28,7 +27,7 @@ function display_posts(posts) {
     posts.forEach((post) => {
         console.log(post);
         let title = post.title
-        let date = format_date( post.published_at)
+        let date = format_date(post.published_at)
         let image = post.feature_image
         let url = post.url
 
@@ -49,7 +48,7 @@ function display_posts(posts) {
 
             </div>`
 
-        postsHtml = postsHtml+postHTML
+        postsHtml = postsHtml + postHTML
 
     });
 
@@ -61,3 +60,15 @@ function format_date(dateString) {
     let now = new Date(dateString)
     return now.toLocaleDateString()
 }
+
+
+window.addEventListener("load", (event) => {
+    let href = window.location.href
+    if (href.includes("#openSearch")) {
+        document.querySelector(".search-trigger").click()
+    }
+    else if(href.includes("#openBookmark")){
+
+    }
+
+})
